@@ -14,15 +14,15 @@ export default class Home extends Component {
     given the topBar a title property.
 
     */
-    // static get options() {
-    //     return {
-    //         topBar: {
-    //             title: {
-    //                 text: 'Home'
-    //             },
-    //         }
-    //     };
-    // }
+    static options(passProps) {
+        return {
+            topBar: {
+                title: {
+                    text: 'Home'
+                },
+            }
+        };
+    }
 
     logout = async () => {
         try {

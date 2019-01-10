@@ -3,15 +3,15 @@ import { View, Text, Button, StyleSheet } from 'react-native'
 import { Navigation } from 'react-native-navigation'
 
 export default class Screen2 extends Component {
-    // static get options() {
-    //     return {
-    //         topBar: {
-    //             title: {
-    //                 text: 'Screen 2'
-    //             }
-    //         }
-    //     }
-    // }
+    static options(passProps) {
+        return {
+            topBar: {
+                title: {
+                    text: 'Screen 2'
+                }
+            }
+        }
+    }
 
     /*
         One thing to note is how we call the Navigation.pop function to go back. 
