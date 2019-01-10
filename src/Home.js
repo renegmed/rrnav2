@@ -39,38 +39,45 @@ export default class Home extends Component {
         using props like in the old version (this.props.navigator.push), 
         we’re importing the Navigation API and calling Navigation.push.
     */
-    // render() {
-    //     return (
-    //         <View style={styles.container}>
-    //             <Text> Hello from Home screen.</Text>
-    //             <Button onPress={this.logout} title="Sign Out" />
-    //             <Button onPress={ () => {
-    //                 Navigation.push(this.props.componentId, {
-    //                     component: {
-    //                         name: 'Screen2',
-    //                     }
-    //                 })    
-    //             }} 
-    //             title="View next screen"
-    //             />
-    //         </View>
-    //     )
-    // }
-
+    
     render() {
         return (
              <View style={styles.container}>
                 <Text> Hello from Home screen.</Text>
-                <Button onPress={this.logout} title="Sign Out" />
-                <Button onPress={ () => {
+                <Button style={styles.button} onPress={this.logout} title="Sign Out" />
+                <Button style={styles.button} onPress={ () => {
                     Navigation.push(this.props.componentId, {
                         component: {
                             name: 'Screen2',
                         }
-                    })    
-                }} 
-                title="View next screen"
-                />
+                    })  
+                }} title="View next screen" />
+
+                <Button style={styles.button} onPress={ () => {
+                    Navigation.push(this.props.componentId, {
+                        component: {
+                            name: 'Lifecycle',
+                        }
+                    }) 
+                }} title="lifecyle screen" />
+                
+               
+                <Button style={styles.button} onPress={ () => {
+                    Navigation.push(this.props.componentId, {
+                        component: {
+                            name: 'Toplevel',
+                        }
+                    }) 
+                }} title="top level screen" />
+                
+
+                <Button style={styles.button} onPress={ () => {
+                    Navigation.push(this.props.componentId, {
+                        component: {
+                            name: 'example.screens.MainScreen',
+                        }
+                    }) 
+                }} title="About Screens" />
             </View>
         )
     }
@@ -80,6 +87,10 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center' 
+    },
+    button: {
+        backgroundColor: 'black',
+        margin: 50
     }
 })
